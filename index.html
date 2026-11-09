@@ -281,11 +281,12 @@ footer{text-align:center;padding-top:48px}footer img{width:56px;height:56px;marg
 <ul class="ul">
 <li class="plus"><svg class="i"><use href="#i-plus"/></svg>A 4th reel, "From the ocean in"</li>
 <li class="plus"><svg class="i"><use href="#i-plus"/></svg>A sunrise visit to the site for true-to-life views</li>
+<li class="plus"><svg class="i"><use href="#i-plus"/></svg>Main film extended to 90 seconds</li>
 <li class="plus"><svg class="i"><use href="#i-plus"/></svg>Every reel in square and portrait sizes</li>
 <li class="plus"><svg class="i"><use href="#i-plus"/></svg>2 rounds of changes on each piece</li>
 </ul></label>
 </div>
-<p class="save">Bought one by one, the Complete extras come to over $2,800. In Complete they cost $2,000.</p>
+<p class="save">Bought one by one, the Complete extras come to over $3,800. In Complete they cost $2,000.</p>
 </section>
 
 <section class="sec">
@@ -296,7 +297,7 @@ footer{text-align:center;padding-top:48px}footer img{width:56px;height:56px;marg
 <label class="chip"><input type="checkbox" data-p="950" data-n="Extra reel from existing scenes"><span><svg class="i"><use href="#i-film"/></svg>Extra reel from existing scenes, $950</span></label>
 <label class="chip"><input type="checkbox" data-p="1450" data-n="Extra reel with new scenes"><span><svg class="i"><use href="#i-idea"/></svg>Extra reel with new scenes, $1,450</span></label>
 <label class="chip sig"><input type="checkbox" data-p="450" data-n="Sunrise site visit"><span><svg class="i"><use href="#i-pin"/></svg>Sunrise site visit, $450</span></label>
-<label class="chip"><input type="checkbox" data-p="990" data-n="Main film to 90 seconds"><span><svg class="i"><use href="#i-film"/></svg>Main film to 90 seconds, $990</span></label>
+<label class="chip sig"><input type="checkbox" data-p="990" data-n="Main film to 90 seconds"><span><svg class="i"><use href="#i-film"/></svg>Main film to 90 seconds, $990</span></label>
 <label class="chip sig"><input type="checkbox" data-p="570" data-n="Square and portrait sizes for all reels"><span><svg class="i"><use href="#i-photo"/></svg>Square and portrait sizes, $570</span></label>
 <label class="chip"><input type="checkbox" data-p="395" data-n="Extra round of changes"><span><svg class="i"><use href="#i-plus"/></svg>Extra round of changes, $395</span></label>
 <label class="chip"><input type="checkbox" data-rush="1" data-n="Rush, under 5 working days"><span><svg class="i"><use href="#i-bolt"/></svg>Rush, under 5 working days, +20%</span></label>
@@ -361,7 +362,7 @@ function calc(){
 var p=document.querySelector('input[name=pkg]:checked').value,comp=p==='Complete';
 document.getElementById('k1').classList.toggle('on',!comp);document.getElementById('k2').classList.toggle('on',comp);
 document.querySelectorAll('.chip.sig input').forEach(function(i){i.disabled=comp;if(comp)i.checked=false});
-document.getElementById('inc').textContent=comp?'The site visit and extra sizes are already in Complete.':'';
+document.getElementById('inc').textContent=comp?'The site visit, 90-second film and extra sizes are already in Complete.':'';
 var base=comp?8950:6950,add=0,rush=false,lines=['111 Hedges Avenue','Package: '+p+' ('+fmt(base)+')'];
 chips.forEach(function(i){if(!i.checked)return;if(i.dataset.rush){rush=true;return}add+=+i.dataset.p;lines.push(i.dataset.n+': +'+fmt(+i.dataset.p))});
 var sub=base+add,t=rush?sub*1.2:sub;
